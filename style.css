@@ -532,6 +532,121 @@ body {
   }
 }
 
+/* Section Header */
+.section-content {
+  text-align: center;
+  padding: 80px 20px 50px;
+  background: #002681;
+  color: #fff;
+}
+
+.section-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.section-content p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: #e0e0e0;
+}
+
+/* Button */
+.about-btn {
+  display: inline-block;
+  background: #0a64d3;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.about-btn:hover {
+  background: red;
+}
+
+/* Cards Container */
+.about-cards-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 20px 80px;
+  align-items: stretch;
+}
+
+/* Section Headings */
+.cards-heading h3,
+.leadership-heading h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+/* Underline Effect */
+.cards-heading h3::after,
+.leadership-heading h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: orange;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Cards */
+.card {
+  display: block;
+  background: #002681;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon */
+.icon {
+  font-size: 40px;
+  color: #f58220;
+  margin-bottom: 20px;
+}
+
+/* Card Text */
+.card h3 {
+  color: #c5dcf8;
+  margin-bottom: 20px;
+}
+
+.card p {
+  color: #eaeaea;
+  line-height: 1.7;
+}
+
+/* List Style */
+.card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
 /* Footer */
 .footer {
   background-color: var(--Logo-color);
