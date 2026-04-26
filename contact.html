@@ -268,7 +268,7 @@
         }
       });
 
-      // ====================== PRAYER REQUEST FORM ======================
+      // ====================== PRAYER REQUEST FORM (Separate) ======================
       const prayerForm = document.getElementById("prayerForm");
 
       if (prayerForm) {
@@ -277,10 +277,6 @@
 
           const fullName = document.getElementById("fullName").value.trim();
           const email = document.getElementById("email").value.trim();
-          const phone = document.getElementById("phone").value.trim();
-          const prayerCategory = document.getElementById("prayerCategory")
-            ? document.getElementById("prayerCategory").value
-            : "";
           const prayerPoint = document
             .getElementById("prayerPoint")
             .value.trim();
@@ -290,36 +286,27 @@
             return;
           }
 
-          let body = `New Prayer Request from Chapel of Glory Member\n\n`;
+          let body = `New Prayer Request from Chapel of Glory Website\n\n`;
           body += `Name: ${fullName}\n`;
           body += `Email: ${email}\n`;
-          if (phone) body += `Phone: ${phone}\n`;
-          if (prayerCategory) body += `Prayer Category: ${prayerCategory}\n\n`;
           body += `Prayer Request:\n${prayerPoint}\n\n`;
           body += `Submitted on: ${new Date().toLocaleString()}`;
 
-          const mailtoLink = `mailto:olamideolorunshola07@gmail.com?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+          window.location.href = `mailto:chapelofgloryattau@gmail.com?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
 
-          window.location.href = mailtoLink;
-
-          // Success Message
-          showSuccessMessage(
-            prayerForm,
-            "Your prayer request has been prepared.",
-          );
+          showSuccess(prayerForm, "Your prayer request has been prepared.");
         });
       }
-      // ====================== TESTIMONY FORM ======================
+
+      // ====================== TESTIMONY FORM (Separate) ======================
       const testimonyForm = document.getElementById("testimonyForm");
 
       if (testimonyForm) {
         testimonyForm.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          // Get form values
           const fullName = document.getElementById("fullName").value.trim();
           const email = document.getElementById("email").value.trim();
-          const phone = document.getElementById("phone").value.trim();
           const testimonyTitle = document
             .getElementById("testimonyTitle")
             .value.trim();
@@ -327,80 +314,40 @@
             .getElementById("testimonyText")
             .value.trim();
 
-          // Validation
-          if (!fullName) {
-            alert("Please enter your Full Name");
-            document.getElementById("fullName").focus();
-            return;
-          }
-          if (!email) {
-            alert("Please enter your Email Address");
-            document.getElementById("email").focus();
-            return;
-          }
-          if (!testimonyTitle) {
-            alert("Please enter a Testimony Title");
-            document.getElementById("testimonyTitle").focus();
-            return;
-          }
-          if (!testimonyText) {
-            alert("Please share your Testimony");
-            document.getElementById("testimonyText").focus();
+          if (!fullName || !email || !testimonyTitle || !testimonyText) {
+            alert("Please fill in all required fields for your testimony.");
             return;
           }
 
-          // Create email body
           let body = `New Testimony from Chapel of Glory Website\n\n`;
           body += `Name: ${fullName}\n`;
           body += `Email: ${email}\n`;
-          if (phone) body += `Phone: ${phone}\n`;
           body += `Testimony Title: ${testimonyTitle}\n\n`;
           body += `Testimony:\n${testimonyText}\n\n`;
           body += `Submitted on: ${new Date().toLocaleString()}`;
 
-          const mailtoLink = `mailto:chapelofgloryattau@gmail.com?subject=Testimony - ${encodeURIComponent(testimonyTitle)}&body=${encodeURIComponent(body)}`;
+          window.location.href = `mailto:chapelofgloryattau@gmail.com?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
 
-          // Open email
-          window.location.href = mailtoLink;
-
-          // Success Message
-          const successDiv = document.createElement("div");
-          successDiv.className = "success-message";
-          successDiv.innerHTML = `
-        <strong>Thank You!</strong><br>
-        Your testimony has been prepared successfully.<br>
-        Please click <strong>"Send"</strong> in your email app.
-      `;
-
-          testimonyForm.appendChild(successDiv);
-          successDiv.style.display = "block";
-
-          // Reset form after 3 seconds
-          setTimeout(() => {
-            testimonyForm.reset();
-            successDiv.remove();
-          }, 3000);
+          showSuccess(testimonyForm, "Your testimony has been prepared.");
         });
       }
 
       // ====================== SUCCESS MESSAGE FUNCTION ======================
-      function showSuccessMessage(form, messageText) {
+      function showSuccess(form, message) {
         const successDiv = document.createElement("div");
         successDiv.className = "success-message";
         successDiv.innerHTML = `
       <strong>Thank You!</strong><br>
-      ${messageText}<br>
+      ${message}<br>
       Please click <strong>"Send"</strong> in your email app.
     `;
 
         form.appendChild(successDiv);
         successDiv.style.display = "block";
 
-        // Reset form after 3.5 seconds
         setTimeout(() => {
           form.reset();
-          if (successDiv.parentNode)
-            successDiv.parentNode.removeChild(successDiv);
+          successDiv.remove();
         }, 3500);
       }
     </script>
