@@ -309,7 +309,6 @@
           );
         });
       }
-
       // ====================== TESTIMONY FORM ======================
       const testimonyForm = document.getElementById("testimonyForm");
 
@@ -317,6 +316,7 @@
         testimonyForm.addEventListener("submit", function (e) {
           e.preventDefault();
 
+          // Get form values
           const fullName = document.getElementById("fullName").value.trim();
           const email = document.getElementById("email").value.trim();
           const phone = document.getElementById("phone").value.trim();
@@ -327,11 +327,29 @@
             .getElementById("testimonyText")
             .value.trim();
 
-          if (!fullName || !email || !testimonyTitle || !testimonyText) {
-            alert("Please fill in all required fields.");
+          // Validation
+          if (!fullName) {
+            alert("Please enter your Full Name");
+            document.getElementById("fullName").focus();
+            return;
+          }
+          if (!email) {
+            alert("Please enter your Email Address");
+            document.getElementById("email").focus();
+            return;
+          }
+          if (!testimonyTitle) {
+            alert("Please enter a Testimony Title");
+            document.getElementById("testimonyTitle").focus();
+            return;
+          }
+          if (!testimonyText) {
+            alert("Please share your Testimony");
+            document.getElementById("testimonyText").focus();
             return;
           }
 
+          // Create email body
           let body = `New Testimony from Chapel of Glory Website\n\n`;
           body += `Name: ${fullName}\n`;
           body += `Email: ${email}\n`;
@@ -340,15 +358,28 @@
           body += `Testimony:\n${testimonyText}\n\n`;
           body += `Submitted on: ${new Date().toLocaleString()}`;
 
-          const mailtoLink = `mailto:olamideolorunshola07@gmail.com?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+          const mailtoLink = `mailto:chapelofgloryattau@gmail.com?subject=Testimony - ${encodeURIComponent(testimonyTitle)}&body=${encodeURIComponent(body)}`;
 
+          // Open email
           window.location.href = mailtoLink;
 
           // Success Message
-          showSuccessMessage(
-            testimonyForm,
-            "Your testimony has been prepared.",
-          );
+          const successDiv = document.createElement("div");
+          successDiv.className = "success-message";
+          successDiv.innerHTML = `
+        <strong>Thank You!</strong><br>
+        Your testimony has been prepared successfully.<br>
+        Please click <strong>"Send"</strong> in your email app.
+      `;
+
+          testimonyForm.appendChild(successDiv);
+          successDiv.style.display = "block";
+
+          // Reset form after 3 seconds
+          setTimeout(() => {
+            testimonyForm.reset();
+            successDiv.remove();
+          }, 3000);
         });
       }
 
