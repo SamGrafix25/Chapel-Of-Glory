@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+:root {
+  --Logo-color: #002681;
+  --logo-color-2: #dd1a1a;
+  --Logo-color-3: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5%;
+  background-color: rgb(251, 252, 253);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: auto;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  top: 50%;
+  left: 70%;
+  overflow: hidden;
+  animation: flip 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(800px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(800px) rotateY(180deg);
+  }
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.church-name {
+  font-size: 21px;
+  font-weight: 700;
+  color: #002681;
+  letter-spacing: 1px;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--Logo-color);
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: var(--logo-color-2);
+}
+.nav-links a:hover {
+  color: #003087;
+}
+
+.nav-links a.active {
+  color: var(--Logo-color);
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--logo-color-2);
+}
+
+/* Menu Button */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: var(--Logo-color);
+  cursor: pointer;
+  display: none;
+  padding: 5px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+
+  .church-name {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(70vh - 60px);
+    background: var(--Logo-color-3);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 30px;
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+/* Prayer Request - Similar to Email Updates Style */
+.prayer-section {
+  padding: 90px 6%;
+  background-color: #f8f9fa;
+}
+
+.prayer-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  background: var(--Logo-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.prayer-left {
+  flex: 1;
+  padding: 70px 60px;
+  color: var(--Logo-color-3);
+}
+
+.prayer-left h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--logo-color-3);
+}
+
+.prayer-left p {
+  font-size: 17.5px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.prayer-benefits {
+  list-style: none;
+}
+
+.prayer-benefits li {
+  font-size: 17px;
+  margin-bottom: 16px;
+  padding-left: 5px;
+}
+
+.prayer-right {
+  flex: 1;
+  background: var(--Logo-color-3);
+  padding: 70px 60px;
+  border-radius: 0 16px 16px 0;
+}
+
+.prayer-form .form-group {
+  margin-bottom: 28px;
+}
+
+.prayer-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--logo-color-2);
+}
+
+.prayer-form input,
+.prayer-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--Logo-color);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.prayer-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: var(--Logo-color-3); /* Orange like the subscribe button */
+  color: var(--Logo-color);
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: var(--logo-color-2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .prayer-wrapper {
+    flex-direction: column;
+  }
+  .prayer-left,
+  .prayer-right {
+    padding: 50px 40px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: var(--Logo-color);
+  color: var(--Logo-color-3);
+  padding: 2px 10px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 50px;
+}
+
+.footer-column h3 {
+  color: var(--logo-color-2);
+  font-size: 22px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--logo-color-2);
+}
+
+.footer-column p {
+  line-height: 1.7;
+  color: var(--Logo-color-3);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul a:hover {
+  color: var(--logo-color-2);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.social-icons {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #374151;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: var(--logo-color-2);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid var(--logo-color-2);
+  text-align: center;
+  color: var(--Logo-color-3);
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 992px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+/* Testimony Submission Section */
+.testimony-section {
+  padding: 100px 6%;
+  background-color: #f8f9fa;
+}
+
+.testimony-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  background: var(--Logo-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimony-left {
+  flex: 1;
+  padding: 70px 60px;
+  color: var(--Logo-color-3);
+}
+
+.testimony-left h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.testimony-left p {
+  font-size: 17.5px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.testimony-right {
+  flex: 1;
+  background: var(--Logo-color-3);
+  padding: 70px 60px;
+  border-radius: 0 16px 16px 0;
+}
+
+.testimony-form .form-group {
+  margin-bottom: 25px;
+}
+
+.testimony-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--logo-color-2);
+}
+
+.testimony-form input,
+.testimony-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--Logo-color);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.testimony-form textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: var(--Logo-color);
+  color: var(--Logo-color-3);
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: var(--logo-color-2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .testimony-wrapper {
+    flex-direction: column;
+  }
+}

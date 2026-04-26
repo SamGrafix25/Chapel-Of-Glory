@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="contact.css" />
+    <title>Chapel Of Glory</title>
+    <link rel="icon" type="image/png" href="Image/IMG_3424.png" />
+
+    <!-- ✅ Correct Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="Image/IMG_3424.png" alt="Chapel Of Glory" />
+        </div>
+        <div class="church-name">CHAPEL OF GLORY</div>
+      </div>
+
+      <!-- ✅ Navigation Links (with close button inside) -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="contact.html" class="active">CONTACT</a></li>
+      </ul>
+
+      <!-- ✅ Menu Button -->
+      <button class="menu-btn" id="menuBtn">
+        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      </button>
+    </nav>
+
+    <!-- Prayer Request Section -->
+    <section class="prayer-section">
+      <div class="prayer-wrapper">
+        <!-- Left Side -->
+        <div class="prayer-left">
+          <h2>Prayer Request</h2>
+          <p>
+            Submit your prayer request below. Our leaders and the prayer unit
+            team will stand with you in faith and intercede on your behalf.
+          </p>
+
+          <ul class="prayer-benefits">
+            <li>✓ Confidential and private</li>
+            <li>✓ Prayed over by the Prophet and team</li>
+            <li>✓ Biblical encouragement will be sent</li>
+            <li>✓ God answers prayers (Matthew 18:19)</li>
+          </ul>
+        </div>
+
+        <!-- Right Side - Form with Dropdown -->
+        <div class="prayer-right">
+          <form id="prayerForm" class="prayer-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  required
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" placeholder="+234 000 000 0000" />
+            </div>
+
+            <!-- Dropdown for Prayer Category -->
+            <div class="form-group">
+              <label for="prayerCategory">Prayer Category *</label>
+              <select id="prayerCategory" required>
+                <option value="">Select Prayer Category</option>
+                <option value="Healing">Healing & Health</option>
+                <option value="Breakthrough">Breakthrough & Success</option>
+                <option value="Guidance">Guidance & Direction</option>
+                <option value="Academic">Academic Success</option>
+                <option value="Financial">Financial Breakthrough</option>
+                <option value="Deliverance">Deliverance & Protection</option>
+                <option value="Spiritual">Spiritual Growth</option>
+                <option value="Others">Others (Please specify below)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="prayerPoint"
+                >Your Prayer Request / Prayer Point *</label
+              >
+              <textarea
+                id="prayerPoint"
+                rows="6"
+                required
+                placeholder="Write your detailed prayer request here..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Submit Prayer Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Your Testimony Section -->
+    <section class="testimony-section">
+      <div class="testimony-wrapper">
+        <!-- Left Side -->
+        <div class="testimony-left">
+          <h2>Share Your Testimony</h2>
+          <p>
+            Has God done something great in your life through the Chapel? We
+            would love to hear your story and celebrate with you!
+          </p>
+          <p>Your testimony can become someone else's breakthrough.</p>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="testimony-right">
+          <form id="testimonyForm" class="testimony-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  required
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" placeholder="+234 000 000 0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="testimonyTitle">Testimony Title *</label>
+              <input
+                type="text"
+                id="testimonyTitle"
+                required
+                placeholder="e.g. Academic Breakthrough, Healing, Deliverance"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="testimonyText">Share Your Testimony *</label>
+              <textarea
+                id="testimonyText"
+                rows="8"
+                required
+                placeholder="Tell us what God did for you..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Testimony</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- About COG Chapel -->
+          <div class="footer-column">
+            <h3>About COG Chapel</h3>
+            <p>
+              A spiritual home for Thomas Adewumi University since 2021 may 21,
+              dedicated to worship, discipleship, and service.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="services.html">SERVICES</a></li>
+              <li><a href="events.html">EVENTS</a></li>
+              <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-item">
+              <span>📍</span>
+              <span>Thomas Adewumi Universit oko Irese Kwara state COG</span>
+            </div>
+            <div class="contact-item">
+              <span>📞</span>
+              <span>+234 810 397 8063</span>
+            </div>
+            <div class="contact-item">
+              <span>✉️</span>
+              <span>chapelofgloryattau1@gmail.com</span>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">▶️</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="footer-bottom">
+          <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
+          <p>
+            <small>>Designed & produced by Olorunshola Olamide Isaiah</small>
+          </p>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+
+        // Change icon between menu and close (X)
+        if (navLinks.classList.contains("active")) {
+          menuIcon.textContent = "close"; // Shows X icon
+        } else {
+          menuIcon.textContent = "menu"; // Shows hamburger
+        }
+      });
+
+      const prayerForm = document.getElementById("prayerForm");
+
+      prayerForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const prayerTitle = document.getElementById("prayerTitle").value.trim();
+        const prayerPoint = document.getElementById("prayerPoint").value.trim();
+
+        if (!fullName || !email || !prayerPoint) {
+          alert("Please fill in your name, email, and prayer request.");
+          return;
+        }
+        // The email body content sent to the Prophet will be formatted as follows:
+        let body = `New Prayer Request from Chapel of Glory Member\n\n`;
+        body += `Name: ${fullName}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        if (prayerTitle) body += `Prayer Title: ${prayerTitle}\n\n`;
+        body += `Prayer Request:\n${prayerPoint}\n\n`;
+        body += `Submitted on: ${new Date().toLocaleString()}`;
+
+        const prophetEmail = "olamideolorunshola07@gmail.com";
+
+        const mailtoLink = `mailto:${prophetEmail}?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+
+        // Try to open email client
+        window.location.href = mailtoLink;
+
+        // Show success message
+        const successDiv = document.createElement("div");
+        successDiv.className = "success-message";
+        successDiv.innerHTML = `
+      <strong>Thank You!</strong><br>
+      Your prayer request has been prepared.<br>
+      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
+    `;
+
+        prayerForm.appendChild(successDiv);
+        successDiv.style.display = "block";
+
+        // Reset form
+        setTimeout(() => {
+          prayerForm.reset();
+          successDiv.remove();
+        }, 4000);
+      });
+
+      const testimonyForm = document.getElementById("testimonyForm");
+
+      testimonyForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const testimonyTitle = document
+          .getElementById("testimonyTitle")
+          .value.trim();
+        const testimonyPoint = document
+          .getElementById("testimonyPoint")
+          .value.trim();
+
+        if (!fullName || !email || !testimonyTitle) {
+          alert("Please fill in your name, email, and testimony.");
+          return;
+        }
+        // The email body content sent to the Prophet will be formatted as follows:
+        let body = `New Testimony from Chapel of Glory Member\n\n`;
+        body += `Name: ${fullName}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        if (testimonyTitle) body += `Testimony Title: ${testimonyTitle}\n\n`;
+        body += `Testimony:\n${testimonyPoint}\n\n`;
+        body += `Submitted on: ${new Date().toLocaleString()}`;
+
+        const prophetEmail = "olamideolorunshola07@gmail.com";
+
+        const mailtoLink = `mailto:${prophetEmail}?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+
+        // Try to open email client
+        window.location.href = mailtoLink;
+
+        // Show success message
+        const successDiv = document.createElement("div");
+        successDiv.className = "success-message";
+        successDiv.innerHTML = `
+      <strong>Thank You!</strong><br>
+      Your Testimony section has been prepared.<br>
+      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
+    `;
+
+        testimonyForm.appendChild(successDiv);
+        successDiv.style.display = "block";
+
+        // Reset form
+        setTimeout(() => {
+          testimonyForm.reset();
+          successDiv.remove();
+        }, 4000);
+      });
+    </script>
+  </body>
+</html>

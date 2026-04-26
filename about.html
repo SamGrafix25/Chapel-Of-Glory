@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="about.css" />
+    <title>Chapel Of Glory</title>
+    <link rel="icon" type="image/png" href="Image/IMG_3424.png" />
+
+    <!-- ✅ Correct Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="Image/IMG_3424.png" alt="Chapel Of Glory" />
+        </div>
+        <div class="church-name">CHAPEL OF GLORY</div>
+      </div>
+
+      <!-- ✅ Navigation Links (with close button inside) -->
+      <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+
+      <!-- ✅ Menu Button -->
+      <button class="menu-btn" id="menuBtn">
+        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      </button>
+    </nav>
+
+  </body>
+</html>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source
+          src="Video/WhatsApp Video 2026-04-13 at 7.07.06 PM.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support this video
+      </video>
+
+      <div class="fallback"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title"><b>Welcome To Chapel Of Glory</b></h1>
+        <p class="hero-subtitle">
+          A place of worship, spirtual growth, and community
+        </p>
+      </div>
+    </section>
+
+<!-- About Section -->
+<!-- Our Leadership Section -->
+<section class="leadership-section">
+  <div class="leadership-container">
+    <h2>Our Leadership</h2>
+    <p class="leadership-subtitle">Meet the team guiding our spiritual journey</p>
+
+    <div class="leadership-grid">
+
+      <!-- Pastor Oluseyi Alakija -->
+      <div class="leader-card">
+        <div class="leader-image">
+          <img src="Image/1773341175601.png" alt="name">
+        </div>
+        <div class="leader-info">
+          <h3>Mrs Oshobajo Aderinsola</h3>
+          <p class="leader-title">Chapel President</p>
+        </div>
+      </div>
+
+      <!-- NAme -->
+      <div class="leader-card">
+        <div class="leader-image">
+          <img src="Image/1763072846407.jpg" alt="Name">
+        </div>
+        <div class="leader-info">
+          <h3>MR Oluwaseun Ayoola</h3>
+          <p class="leader-title">Chaplain</p>
+        </div>
+      </div>
+
+      <!-- Name -->
+      <div class="leader-card">
+        <div class="leader-image">
+          <img src="Image/1767960322405.jpg" alt="Name">
+        </div>
+        <div class="leader-info">
+          <h3>Mrs Omotayo Saheed</h3>
+          <p class="leader-title">Position</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About COG Chapel -->
+      <div class="footer-column">
+        <h3>About COG Chapel</h3>
+        <p>A spiritual home for Thomas Adewumi University since 2021 may 21, dedicated to worship, discipleship, and service.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <div class="contact-item">
+          <span>📍</span>
+          <span>Thomas Adewumi Universit oko Irese Kwara state COG</span>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <span>+234 810 397 8063</span>
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <span>chapelofgloryattau1@gmail.com</span>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#" class="social-icon">f</a>
+          <a href="#" class="social-icon">📷</a>
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">▶️</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
+      <p><small>>Designed & produced by Olorunshola Olamide Isaiah</small></p>
+    </div>
+  </footer>
+
+ <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Change icon between menu and close (X)
+    if (navLinks.classList.contains('active')) {
+      menuIcon.textContent = 'close';     // Shows X icon
+    } else {
+      menuIcon.textContent = 'menu';      // Shows hamburger
+    }
+  });
+
+
+  const prayerForm = document.getElementById('prayerForm');
+
+  prayerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const prayerTitle = document.getElementById('prayerTitle').value.trim();
+    const prayerPoint = document.getElementById('prayerPoint').value.trim();
+
+    if (!fullName || !email || !prayerPoint) {
+      alert("Please fill in your name, email, and prayer request.");
+      return;
+    }
+// The email body content sent to the Prophet will be formatted as follows:
+    let body = `New Prayer Request from Chapel of Glory Member\n\n`;
+    body += `Name: ${fullName}\n`;
+    body += `Email: ${email}\n`;
+    if (phone) body += `Phone: ${phone}\n`;
+    if (prayerTitle) body += `Prayer Title: ${prayerTitle}\n\n`;
+    body += `Prayer Request:\n${prayerPoint}\n\n`;
+    body += `Submitted on: ${new Date().toLocaleString()}`;
+
+    const prophetEmail = "olamideolorunshola07@gmail.com";
+
+    const mailtoLink = `mailto:${prophetEmail}?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+
+    // Try to open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-message';
+    successDiv.innerHTML = `
+      <strong>Thank You!</strong><br>
+      Your prayer request has been prepared.<br>
+      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
+    `;
+
+    prayerForm.appendChild(successDiv);
+    successDiv.style.display = 'block';
+
+    // Reset form
+    setTimeout(() => {
+      prayerForm.reset();
+      successDiv.remove();
+    }, 4000);
+  });
+</script>
+</body>
+</html>
