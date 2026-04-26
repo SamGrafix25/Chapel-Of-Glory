@@ -317,60 +317,6 @@
           successDiv.remove();
         }, 4000);
       });
-
-      const testimonyForm = document.getElementById("testimonyForm");
-
-      testimonyForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const fullName = document.getElementById("fullName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const testimonyTitle = document
-          .getElementById("testimonyTitle")
-          .value.trim();
-        const testimonyPoint = document
-          .getElementById("testimonyPoint")
-          .value.trim();
-
-        if (!fullName || !email || !testimonyTitle) {
-          alert("Please fill in your name, email, and testimony.");
-          return;
-        }
-        // The email body content sent to the Prophet will be formatted as follows:
-        let body = `New Testimony from Chapel of Glory Member\n\n`;
-        body += `Name: ${fullName}\n`;
-        body += `Email: ${email}\n`;
-        if (phone) body += `Phone: ${phone}\n`;
-        if (testimonyTitle) body += `Testimony Title: ${testimonyTitle}\n\n`;
-        body += `Testimony:\n${testimonyPoint}\n\n`;
-        body += `Submitted on: ${new Date().toLocaleString()}`;
-
-        const prophetEmail = "olamideolorunshola07@gmail.com";
-
-        const mailtoLink = `mailto:${prophetEmail}?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
-
-        // Try to open email client
-        window.location.href = mailtoLink;
-
-        // Show success message
-        const successDiv = document.createElement("div");
-        successDiv.className = "success-message";
-        successDiv.innerHTML = `
-      <strong>Thank You!</strong><br>
-      Your Testimony section has been prepared.<br>
-      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
-    `;
-
-        testimonyForm.appendChild(successDiv);
-        successDiv.style.display = "block";
-
-        // Reset form
-        setTimeout(() => {
-          testimonyForm.reset();
-          successDiv.remove();
-        }, 4000);
-      });
     </script>
   </body>
 </html>
