@@ -267,83 +267,110 @@
           menuIcon.textContent = "menu"; // Shows hamburger
         }
       });
-      
-  // ====================== PRAYER REQUEST FORM ======================
-  const prayerForm = document.getElementById('prayerForm');
 
-  if (prayerForm) {
-    prayerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+      const prayerForm = document.getElementById("prayerForm");
 
-      const fullName     = document.querySelector('#prayerForm #fullName').value.trim();
-      const email        = document.querySelector('#prayerForm #email').value.trim();
-      const prayerPoint  = document.querySelector('#prayerForm #prayerPoint').value.trim();
+      prayerForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-      if (!fullName || !email || !prayerPoint) {
-        alert("Please fill in all required fields for Prayer Request.");
-        return;
-      }
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const prayerTitle = document.getElementById("prayerTitle").value.trim();
+        const prayerPoint = document.getElementById("prayerPoint").value.trim();
 
-      let body = `New Prayer Request from Chapel of Glory Website\n\n`;
-      body += `Name: ${fullName}\n`;
-      body += `Email: ${email}\n`;
-      body += `Prayer Request:\n${prayerPoint}\n\n`;
-      body += `Submitted on: ${new Date().toLocaleString()}`;
+        if (!fullName || !email || !prayerPoint) {
+          alert("Please fill in your name, email, and prayer request.");
+          return;
+        }
+        // The email body content sent to the Prophet will be formatted as follows:
+        let body = `New Prayer Request from Chapel of Glory Member\n\n`;
+        body += `Name: ${fullName}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        if (prayerTitle) body += `Prayer Title: ${prayerTitle}\n\n`;
+        body += `Prayer Request:\n${prayerPoint}\n\n`;
+        body += `Submitted on: ${new Date().toLocaleString()}`;
 
-      window.location.href = `mailto:olamideolorunshola07@gmail.com?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+        const prophetEmail = "olamideolorunshola07@gmail.com";
 
-      showSuccess(prayerForm, "Your prayer request has been prepared.");
-    });
-  }
+        const mailtoLink = `mailto:${prophetEmail}?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
 
-  // ====================== TESTIMONY FORM ======================
-  const testimonyForm = document.getElementById('testimonyForm');
+        // Try to open email client
+        window.location.href = mailtoLink;
 
-  if (testimonyForm) {
-    testimonyForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const fullName      = document.querySelector('#testimonyForm #fullName').value.trim();
-      const email         = document.querySelector('#testimonyForm #email').value.trim();
-      const testimonyTitle = document.querySelector('#testimonyForm #testimonyTitle').value.trim();
-      const testimonyText = document.querySelector('#testimonyForm #testimonyText').value.trim();
-
-      if (!fullName || !email || !testimonyTitle || !testimonyText) {
-        alert("Please fill in all required fields for your Testimony.");
-        return;
-      }
-
-      let body = `New Testimony from Chapel of Glory Website\n\n`;
-      body += `Name: ${fullName}\n`;
-      body += `Email: ${email}\n`;
-      body += `Testimony Title: ${testimonyTitle}\n\n`;
-      body += `Testimony:\n${testimonyText}\n\n`;
-      body += `Submitted on: ${new Date().toLocaleString()}`;
-
-      window.location.href = `mailto:olamideolorunshola07@gmail.com?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
-
-      showSuccess(testimonyForm, "Your testimony has been prepared.");
-    });
-  }
-
-  // ====================== SUCCESS MESSAGE ======================
-  function showSuccess(form, message) {
-    const successDiv = document.createElement('div');
-    successDiv.className = 'success-message';
-    successDiv.innerHTML = `
+        // Show success message
+        const successDiv = document.createElement("div");
+        successDiv.className = "success-message";
+        successDiv.innerHTML = `
       <strong>Thank You!</strong><br>
-      ${message}<br>
-      Please click <strong>"Send"</strong> in your email app.
+      Your prayer request has been prepared.<br>
+      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
     `;
 
-    form.appendChild(successDiv);
-    successDiv.style.display = 'block';
+        prayerForm.appendChild(successDiv);
+        successDiv.style.display = "block";
 
-    setTimeout(() => {
-      form.reset();
-      successDiv.remove();
-    }, 3500);
-  }
-</script>
+        // Reset form
+        setTimeout(() => {
+          prayerForm.reset();
+          successDiv.remove();
+        }, 4000);
+      });
+
+      const testimonyForm = document.getElementById("testimonyForm");
+
+      testimonyForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const testimonyTitle = document
+          .getElementById("testimonyTitle")
+          .value.trim();
+        const testimonyPoint = document
+          .getElementById("testimonyPoint")
+          .value.trim();
+
+        if (!fullName || !email || !testimonyTitle) {
+          alert("Please fill in your name, email, and testimony.");
+          return;
+        }
+        // The email body content sent to the Prophet will be formatted as follows:
+        let body = `New Testimony from Chapel of Glory Member\n\n`;
+        body += `Name: ${fullName}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        if (testimonyTitle) body += `Testimony Title: ${testimonyTitle}\n\n`;
+        body += `Testimony:\n${testimonyPoint}\n\n`;
+        body += `Submitted on: ${new Date().toLocaleString()}`;
+
+        const prophetEmail = "olamideolorunshola07@gmail.com";
+
+        const mailtoLink = `mailto:${prophetEmail}?subject=Testimony from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
+
+        // Try to open email client
+        window.location.href = mailtoLink;
+
+        // Show success message
+        const successDiv = document.createElement("div");
+        successDiv.className = "success-message";
+        successDiv.innerHTML = `
+      <strong>Thank You!</strong><br>
+      Your Testimony section has been prepared.<br>
+      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
+    `;
+
+        testimonyForm.appendChild(successDiv);
+        successDiv.style.display = "block";
+
+        // Reset form
+        setTimeout(() => {
+          testimonyForm.reset();
+          successDiv.remove();
+        }, 4000);
+      });
+    </script>
   </body>
 </html>

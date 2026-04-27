@@ -428,7 +428,7 @@ body {
 }
 
 .footer-column h3 {
-  color: var(--logo-color-2);
+  color: #91acdf;
   font-size: 22px;
   margin-bottom: 20px;
   position: relative;
@@ -442,7 +442,7 @@ body {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: var(--logo-color-2);
+  background-color: white;
 }
 
 .footer-column p {
@@ -466,7 +466,7 @@ body {
 }
 
 .footer-column ul a:hover {
-  color: var(--logo-color-2);
+  color: #020f27;
 }
 
 .contact-item {
@@ -505,7 +505,7 @@ body {
 .footer-bottom {
   margin-top: 60px;
   padding-top: 25px;
-  border-top: 1px solid var(--logo-color-2);
+  border-top: 1px solid white;
   text-align: center;
   color: var(--Logo-color-3);
   font-size: 15px;
