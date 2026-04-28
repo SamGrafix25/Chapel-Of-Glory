@@ -214,6 +214,20 @@ body {
   line-height: 1.4;
 }
 
+.hero-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: var(--logo-color-2);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
 @media (max-width: 600px) {
   .hero {
     height: 420px;
@@ -413,6 +427,7 @@ body {
 }
 
 /* Footer */
+
 .footer {
   background-color: var(--Logo-color);
   color: #ddd;

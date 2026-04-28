@@ -156,89 +156,90 @@ body {
   }
 }
 
-/* Prayer Request - Similar to Email Updates Style */
-.prayer-section {
-  padding: 90px 6%;
+/* ====================== COMBINED PRAYER & TESTIMONY SECTION ====================== */
+.prayer-testimony-section {
+  padding: 100px 6%;
   background-color: #f8f9fa;
 }
 
-.prayer-wrapper {
+.pt-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  gap: 40px;
-  background: var(--Logo-color);
+  gap: 60px;
+  background: #003087;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.prayer-left {
+.pt-left {
   flex: 1;
   padding: 70px 60px;
-  color: var(--Logo-color-3);
+  color: white;
 }
 
-.prayer-left h2 {
+.pt-left h2 {
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: var(--logo-color-3);
 }
 
-.prayer-left p {
+.pt-left p {
   font-size: 17.5px;
   line-height: 1.7;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   opacity: 0.95;
 }
 
-.prayer-benefits {
-  list-style: none;
-}
-
-.prayer-benefits li {
-  font-size: 17px;
-  margin-bottom: 16px;
-  padding-left: 5px;
-}
-
-.prayer-right {
+.pt-right {
   flex: 1;
-  background: var(--Logo-color-3);
+  background: white;
   padding: 70px 60px;
   border-radius: 0 16px 16px 0;
 }
 
-.prayer-form .form-group {
+.pt-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.pt-form .form-group {
   margin-bottom: 28px;
 }
 
-.prayer-form label {
+.pt-form label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: var(--logo-color-2);
+  color: #333;
 }
 
-.prayer-form input,
-.prayer-form textarea {
+.pt-form input,
+.pt-form select,
+.pt-form textarea {
   width: 100%;
   padding: 14px 16px;
-  border: 2px solid var(--Logo-color);
+  border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
 }
 
-.prayer-form textarea {
-  min-height: 160px;
+.pt-form select {
+  height: 52px;
+  cursor: pointer;
+}
+
+.pt-form textarea {
   resize: vertical;
+  min-height: 160px;
 }
 
 .submit-btn {
   width: 100%;
-  background-color: var(--Logo-color-3); /* Orange like the subscribe button */
-  color: var(--Logo-color);
+  background-color: #d97706;
+  color: white;
   border: none;
   padding: 16px;
   font-size: 18px;
@@ -246,20 +247,39 @@ body {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background 0.3s;
 }
 
 .submit-btn:hover {
-  background-color: var(--logo-color-2);
+  background-color: #b45309;
+}
+
+/* Success Message */
+.success-message {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border-left: 6px solid #28a745;
+  margin-top: 25px;
+  font-size: 16.5px;
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .prayer-wrapper {
+  .pt-wrapper {
     flex-direction: column;
   }
-  .prayer-left,
-  .prayer-right {
+  .pt-left,
+  .pt-right {
     padding: 50px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pt-form .form-row {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -378,7 +398,6 @@ body {
     }
   }
 }
-
 /* Testimony Submission Section */
 .testimony-section {
   padding: 100px 6%;

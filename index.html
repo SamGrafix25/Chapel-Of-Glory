@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="style.css" />
     <title>Chapel Of Glory</title>
     <link rel="icon" type="image/png" href="Image/IMG_3424.png" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
     <!-- ✅ Correct Google Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   </head>
 
   <body>
-
     <nav class="navbar">
       <div class="logo-container">
         <div class="logo">
@@ -27,7 +27,7 @@
         <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="services.html">SERVICES</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="events.html">EVENTS</a></li>
         <li><a href="contact.html">CONTACT</a></li>
       </ul>
 
@@ -52,11 +52,14 @@
 
       <div class="fallback"></div>
 
-      <div class="hero-content">
+      <div class="hero-content" data-aos="zoom-in">
         <h1 class="hero-title"><b>Welcome To Chapel Of Glory</b></h1>
         <p class="hero-subtitle">
          Christ In Us... Is The Hope Of Glory (Colossians 1:27).
         </p>
+         <a href="https://www.youtube.com/@chapelofglorytau3418">
+          <button class="hero-btn">Join Us Live</button>
+         </a>
       </div>
     </section>
 
@@ -189,65 +192,59 @@
 
 
     <!-- Footer -->
-<footer class="footer">
-        <div class="footer-container">
-          <!-- About COG Chapel -->
-          <div class="footer-column">
-            <h3>About COG Chapel</h3>
-            <p>
-              A spiritual home for Thomas Adewumi University since 2021 may 21,
-              dedicated to worship, discipleship, and service.
-            </p>
-            
-            <!-- Social Media Icons -->
-            <div class="social-icons">
-              <a href="#" class="social-icon">f</a>
-              <a href="#" class="social-icon">📷</a>
-              <a href="#" class="social-icon">𝕏</a>
-              <a href="#" class="social-icon">▶️</a>
-            </div>
-          </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About COG Chapel -->
+      <div class="footer-column">
+        <h3>About COG Chapel</h3>
+        <p>A spiritual home for Thomas Adewumi University since 2021 may 21, dedicated to worship, discipleship, and service.</p>
+      </div>
 
-          <!-- Quick Links -->
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="services.html">SERVICES</a></li>
-              <li><a href="gallery.html">GALLERY</a></li>
-              <li><a href="contact.html" class="active">CONTACT</a></li>
-            </ul>
-          </div>
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
 
-          <!-- Contact Info -->
-          <div class="footer-column">
-            <h3>Contact Info</h3>
-            <div class="contact-item">
-              <span>📍</span>
-              <span>Thomas Adewunmi University oko Irese Kwara state COG</span>
-            </div>
-            <div class="contact-item">
-              <span>📞</span>
-              <span>+234 810 397 8063</span>
-            </div>
-            <div class="contact-item">
-              <span>✉️</span>
-              <span>chapelofgloryattau1@gmail.com</span>
-            </div>
-
-            
-          </div>
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <div class="contact-item">
+          <span>📍</span>
+          <span>Thomas Adewumi Universit oko Irese Kwara state COG</span>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <span>+234 810 397 8063</span>
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <span>chapelofgloryattau1@gmail.com</span>
         </div>
 
-        <!-- Bottom Copyright -->
-        <div class="footer-bottom">
-          <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
-          <p>
-            <small>>Designed & produced by Olorunshola Olamide Isaiah</small>
-          </p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#" class="social-icon">f</a>
+          <a href="#" class="social-icon">📷</a>
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">▶️</a>
         </div>
-      </footer>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
+      <p><small>>Designed & produced by Olorunshola Olamide Isaiah</small></p>
+    </div>
+  </footer>
 
  <script>
   const menuBtn = document.getElementById('menuBtn');
@@ -265,59 +262,15 @@
       menuIcon.textContent = 'menu';      // Shows hamburger
     }
   });
-
-
-  const prayerForm = document.getElementById('prayerForm');
-
-  prayerForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const prayerTitle = document.getElementById('prayerTitle').value.trim();
-    const prayerPoint = document.getElementById('prayerPoint').value.trim();
-
-    if (!fullName || !email || !prayerPoint) {
-      alert("Please fill in your name, email, and prayer request.");
-      return;
-    }
-// The email body content sent to the Prophet will be formatted as follows:
-    let body = `New Prayer Request from Chapel of Glory Member\n\n`;
-    body += `Name: ${fullName}\n`;
-    body += `Email: ${email}\n`;
-    if (phone) body += `Phone: ${phone}\n`;
-    if (prayerTitle) body += `Prayer Title: ${prayerTitle}\n\n`;
-    body += `Prayer Request:\n${prayerPoint}\n\n`;
-    body += `Submitted on: ${new Date().toLocaleString()}`;
-
-    const prophetEmail = "olamideolorunshola07@gmail.com";
-
-    const mailtoLink = `mailto:${prophetEmail}?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
-
-    // Try to open email client
-    window.location.href = mailtoLink;
-
-    // Show success message
-    const successDiv = document.createElement('div');
-    successDiv.className = 'success-message';
-    successDiv.innerHTML = `
-      <strong>Thank You!</strong><br>
-      Your prayer request has been prepared.<br>
-      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
-    `;
-
-    prayerForm.appendChild(successDiv);
-    successDiv.style.display = 'block';
-
-    // Reset form
-    setTimeout(() => {
-      prayerForm.reset();
-      successDiv.remove();
-    }, 4000);
-  });
 </script>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ 
+    duration: 1000,
+     once: true
+     });
+</script>
 
   </body>
 </html>

@@ -213,7 +213,19 @@ body {
   font-size: 19px;
   line-height: 1.4;
 }
-
+.hero-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: var(--logo-color-2);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
 @media (max-width: 600px) {
   .hero {
     height: 420px;
@@ -227,105 +239,6 @@ body {
     font-size: 16px;
   }
 }
-
-/* Button */
-.about-btn {
-  display: inline-block;
-  background: #0a64d3;
-  color: #fff;
-  padding: 14px 32px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.about-btn:hover {
-  background: red;
-}
-
-
-/* Cards Container */
-.about-cards-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 60px 20px 80px;
-  align-items: stretch;
-}
-
-/* Section Headings */
-
-.cards-heading {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.cards-heading h3{
-  font-size: 42px;
-  color: var(--Logo-color);
-  margin-bottom: 10px;
-}
-
-/* Underline Effect */
-.cards-heading h3::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--logo-color-2);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Cards */
-.card {
-  display: block;
-  background: var(--Logo-color-3);
-  padding: 40px 30px;
-  border-radius: 12px;
-  width: 320px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-/* Icon */
-.icon {
-  font-size: 40px;
-  color: #f58220;
-  margin-bottom: 20px;
-}
-
-/* Card Text */
-.card h3 {
-  color: var(--Logo-color);
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: var(--Logo-color);
-  line-height: 1.7;
-}
-
-/* List Style */
-.card ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.card ul li {
-  margin-bottom: 10px;
-  color: var(--Logo-color);
-}
-
-
 
 /* Our Leadership Section */
 .leadership-section {
@@ -365,16 +278,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-
-.leadership-container h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--logo-color-2);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
 .leader-card:hover {
   transform: translateY(-10px);
 }
@@ -425,6 +328,195 @@ body {
   }
 }
 
+/* ====================== WORKER HEADS SECTION ====================== */
+.worker-heads-section {
+  padding: 100px 6%;
+  background-color: #f8f9fa;
+}
+
+.worker-heads-section h2 {
+  font-size: 42px;
+  color: #003087;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 19px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.worker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.worker-card {
+  text-align: center;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.worker-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.worker-image {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #003087;
+}
+
+.worker-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.worker-card h3 {
+  font-size: 22px;
+  color: #003087;
+  margin-bottom: 8px;
+}
+
+.worker-card .position {
+  color: #d4a017;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ====================== WORKER UNITS SECTION ====================== */
+.worker-units-section {
+  padding: 100px 6%;
+  background-color: white;
+}
+
+.section-container h2 {
+  font-size: 42px;
+  color: #003087;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.unit-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.unit-card:hover {
+  transform: translateY(-8px);
+}
+
+.unit-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.unit-card h3 {
+  padding: 20px 15px;
+  font-size: 20px;
+  color: #003087;
+  margin: 0;
+}
+
+/* ====================== VISION, MISSION & GOALS ====================== */
+.vmg-section {
+  padding: 100px 6%;
+  background-color: #f8f9fa;
+}
+
+.vmg-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.vmg-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.vmg-card:hover {
+  transform: translateY(-8px);
+}
+
+.vmg-card h3 {
+  font-size: 26px;
+  color: #003087;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.vmg-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #d4a017;
+}
+
+.vmg-card p,
+.vmg-card ul {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  text-align: left;
+}
+
+.vmg-card ul {
+  padding-left: 20px;
+}
+
+.vmg-card ul li {
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .worker-heads-section,
+  .worker-units-section,
+  .vmg-section {
+    padding: 70px 6%;
+  }
+}
+
+/* Footer */
 /* Footer */
 .footer {
   background-color: var(--Logo-color);
