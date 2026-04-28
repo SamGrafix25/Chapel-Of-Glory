@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Church Services Section</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#222;
+    }
+
+    .services-section{
+      padding:70px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h1{
+      font-size:42px;
+      color:#1b2a49;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+      font-size:17px;
+    }
+
+    .services-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:25px;
+    }
+
+    .service-card{
+      background:white;
+      border-radius:18px;
+      padding:30px 25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      transition:0.3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-icon{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:#1b2a49;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      color:white;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color:#1b2a49;
+    }
+
+    .service-card p{
+      color:#666;
+      line-height:1.6;
+      margin-bottom:18px;
+    }
+
+    .service-time{
+      font-weight:bold;
+      color:#0d6efd;
+      margin-bottom:20px;
+    }
+
+    .service-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#1b2a49;
+      color:white;
+      padding:12px 20px;
+      border-radius:8px;
+      transition:0.3s ease;
+    }
+
+    .service-btn:hover{
+      background:#0d6efd;
+    }
+
+    /* Modal */
+
+    .modal{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100vh;
+      background:rgba(0,0,0,0.6);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+    }
+
+    .modal-content{
+      background:white;
+      width:90%;
+      max-width:500px;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      animation:popup 0.4s ease;
+    }
+
+    @keyframes popup{
+      from{
+        transform:scale(0.7);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .modal-content h2{
+      margin-bottom:15px;
+      color:#1b2a49;
+    }
+
+    .modal-content p{
+      line-height:1.7;
+      color:#555;
+      margin-bottom:25px;
+    }
+
+    .close-btn{
+      background:#1b2a49;
+      color:white;
+      border:none;
+      padding:12px 22px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    .close-btn:hover{
+      background:#0d6efd;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="services-section">
+
+    <div class="section-title">
+      <h1>Our Services</h1>
+      <p>Experience worship, growth, fellowship, and transformation.</p>
+    </div>
+
+    <div class="services-container">
+
+      <div class="service-card">
+        <div class="service-icon">⛪</div>
+        <h3>Sunday Worship</h3>
+        <p>Join us for powerful worship, inspiring messages, and fellowship.</p>
+        <div class="service-time">Sundays • 8:00 AM</div>
+        <a href="#" class="service-btn"
+          data-title="Sunday Worship"
+          data-info="Our Sunday Worship Service is a time of praise, worship, prayer, and biblical teaching designed to strengthen your faith and relationship with God.">
+          Learn More
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🙏</div>
+        <h3>Prayer Meeting</h3>
+        <p>Gather together for intercession, thanksgiving, and spiritual revival.</p>
+        <div class="service-time">Wednesdays • 5:00 PM</div>
+        <a href="#" class="service-btn"
+          data-title="Prayer Meeting"
+          data-info="Our prayer meetings focus on seeking God together through heartfelt prayer, worship, and encouragement.">
+          Learn More
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📖</div>
+        <h3>Bible Study</h3>
+        <p>Grow deeper in the Word through engaging and practical teachings.</p>
+        <div class="service-time">Fridays • 6:00 PM</div>
+        <a href="#" class="service-btn"
+          data-title="Bible Study"
+          data-info="Bible Study sessions help believers understand scripture deeply and apply biblical principles to everyday life.">
+          Learn More
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Modal -->
+
+  <div class="modal" id="serviceModal">
+
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+
+      <button class="close-btn" id="closeModal">
+        Close
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+
+    const buttons = document.querySelectorAll(".service-btn");
+    const modal = document.getElementById("serviceModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const closeModal = document.getElementById("closeModal");
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        modalTitle.innerText = this.dataset.title;
+        modalText.innerText = this.dataset.info;
+
+        modal.style.display = "flex";
+
+      });
+
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+
+      if(e.target === modal){
+        modal.style.display = "none";
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
