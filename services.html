@@ -38,142 +38,207 @@
       </button>
     </nav>
 
-
-
-  <section class="services-section">
-
-    <div class="section-title">
-      <h1>Our Services</h1>
-      <p>Experience worship, growth, fellowship, and transformation.</p>
-    </div>
-
-    <div class="services-container">
-
-    
-
-      <div class="service-card">
-        <div class="service-image">
-        <img src="Sunday service.jpeg" alt="Bible Study">
-        </div>
-        <h3>Sunday Worship</h3>
-        <p>Join us for powerful worship, inspiring messages, and fellowship.</p>
-        <!-- <div class="service-time">Sundays • 8:00 AM</div> -->
-        <div class="service-time">
-          Sundays (EAST) •First Service - 8:00 AM
-          <br>
-          Second Service - 10:00 AM
-          <br>
-          <span class="second-service">
-          Sundays (WEST) • 10:00 AM
-          <br>
-          </span>
-        </div>
-        <a href="#" class="service-btn"
-          data-title="Sunday Worship"
-          data-info="Our Sunday Worship Service is a time of praise, worship, prayer, and biblical teaching designed to strengthen your faith and relationship with God.">
-          Learn More
-        </a>
-      </div>
-      
-
-      <div class="service-card">
-        <div class="service-image">
-        <img src="bible study.jpeg" alt="Bible Study">
-        </div>
-        <!-- <div class="service-icon">🙏</div> -->
-        <h3>Bible Study</h3>
-        <p>Gather together for intercession, thanksgiving, and spiritual revival.</p>
-        <!-- <div class="service-time">Wednesdays • 6:00 PM</div> -->
-        <div class="service-time">
-          Sundays (EAST) • 6:00 PM
-          <br>
-          <span class="second-service">
-          Sundays (WEST) • 5:45 PM
-          </span>
-        </div>
-        <a href="#" class="service-btn"
-          data-title="Bible Study"
-          data-info="Bible Study sessions help believers understand scripture deeply and apply biblical principles to everyday life.">
-          Learn More
-        </a>
+    <section class="services-section">
+      <div class="section-title">
+        <h1>Our Services</h1>
+        <p>Experience worship, growth, fellowship, and transformation.</p>
       </div>
 
-      <div class="service-card">
-        <div class="service-image">
-        <img src="Prayer meeting.jpeg" alt="Bible Study">
+      <div class="services-container">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="Sunday service.jpeg" alt="Bible Study" />
+          </div>
+          <h3>Sunday Worship</h3>
+          <p>
+            Join us for powerful worship, inspiring messages, and fellowship.
+          </p>
+          <!-- <div class="service-time">Sundays • 8:00 AM</div> -->
+          <div class="service-time">
+            Sundays (EAST) •First Service - 8:00 AM
+            <br />
+            Second Service - 10:00 AM
+            <br />
+            <span class="second-service">
+              Sundays (WEST) • 10:00 AM
+              <br />
+            </span>
+          </div>
+          <a
+            href="#"
+            class="service-btn"
+            data-title="Sunday Worship"
+            data-info="Our Sunday Worship Service is a time of praise, worship, prayer, and biblical teaching designed to strengthen your faith and relationship with God."
+          >
+            Learn More
+          </a>
         </div>
-        <h3>Prayer Meeting</h3>
-        <p>Grow deeper in the Word through engaging and practical teachings.</p>
-        <!-- <div class="service-time">Sundays(EAST) • 6:00 PM</div> -->
-        <div class="service-time">
-          Sunday Evening (EAST) • 6:00 PM
-          <br>
-          <span class="second-service">
-          Sunday Evening(WEST) • 5:45 PM
-          </span>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="bible study.jpeg" alt="Bible Study" />
+          </div>
+          <!-- <div class="service-icon">🙏</div> -->
+          <h3>Bible Study</h3>
+          <p>
+            Gather together for intercession, thanksgiving, and spiritual
+            revival.
+          </p>
+          <!-- <div class="service-time">Wednesdays • 6:00 PM</div> -->
+          <div class="service-time">
+            Sundays (EAST) • 6:00 PM
+            <br />
+            <span class="second-service"> Sundays (WEST) • 5:45 PM </span>
+          </div>
+          <a
+            href="#"
+            class="service-btn"
+            data-title="Bible Study"
+            data-info="Bible Study sessions help believers understand scripture deeply and apply biblical principles to everyday life."
+          >
+            Learn More
+          </a>
         </div>
-        <a href="#" class="service-btn"
-          data-title="Prayer Meeting"
-          data-info="Our prayer meetings focus on seeking God together through heartfelt prayer, worship, and encouragement".>
-          Learn More
-        </a>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="Prayer meeting.jpeg" alt="Bible Study" />
+          </div>
+          <h3>Prayer Meeting</h3>
+          <p>
+            Grow deeper in the Word through engaging and practical teachings.
+          </p>
+          <!-- <div class="service-time">Sundays(EAST) • 6:00 PM</div> -->
+          <div class="service-time">
+            Sunday Evening (EAST) • 6:00 PM
+            <br />
+            <span class="second-service"> Sunday Evening(WEST) • 5:45 PM </span>
+          </div>
+          <a
+            href="#"
+            class="service-btn"
+            data-title="Prayer Meeting"
+            data-info="Our prayer meetings focus on seeking God together through heartfelt prayer, worship, and encouragement"
+            .
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+
+    <div class="modal" id="serviceModal">
+      <div class="modal-content">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+
+        <button class="close-btn" id="closeModal">Close</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About COG Chapel -->
+        <div class="footer-column">
+          <h3>About COG Chapel</h3>
+          <p>
+            A spiritual home for Thomas Adewumi University since 2021 may 21,
+            dedicated to worship, discipleship, and service.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <div class="contact-item">
+            <span>📍</span>
+            <span>Thomas Adewumi Universit oko Irese Kwara state COG</span>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>+234 810 397 8063</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>chapelofgloryattau1@gmail.com</span>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="social-icons">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">▶️</a>
+          </div>
+        </div>
       </div>
 
-    </div>
+      <!-- Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
+        <p><small>>Designed & produced by Akinlotan Victor</small></p>
+      </div>
+    </footer>
 
-  </section>
+    <script>
+      const buttons = document.querySelectorAll(".service-btn");
+      const modal = document.getElementById("serviceModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalText = document.getElementById("modalText");
+      const closeModal = document.getElementById("closeModal");
 
-  <!-- Modal -->
+      buttons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+          e.preventDefault();
 
-  <div class="modal" id="serviceModal">
+          modalTitle.innerText = this.dataset.title;
+          modalText.innerText = this.dataset.info;
 
-    <div class="modal-content">
-      <h2 id="modalTitle"></h2>
-      <p id="modalText"></p>
-
-      <button class="close-btn" id="closeModal">
-        Close
-      </button>
-    </div>
-
-  </div>
-
-  <script>
-
-    const buttons = document.querySelectorAll(".service-btn");
-    const modal = document.getElementById("serviceModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalText = document.getElementById("modalText");
-    const closeModal = document.getElementById("closeModal");
-
-    buttons.forEach(button => {
-
-      button.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        modalTitle.innerText = this.dataset.title;
-        modalText.innerText = this.dataset.info;
-
-        modal.style.display = "flex";
-
+          modal.style.display = "flex";
+        });
       });
 
-    });
-
-    closeModal.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-
-      if(e.target === modal){
+      closeModal.addEventListener("click", () => {
         modal.style.display = "none";
-      }
+      });
 
-    });
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
 
-  </script>
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
 
-</body>
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+
+        // Change icon between menu and close (X)
+        if (navLinks.classList.contains("active")) {
+          menuIcon.textContent = "close"; // Shows X icon
+        } else {
+          menuIcon.textContent = "menu"; // Shows hamburger
+        }
+      });
+    </script>
+  </body>
 </html>
