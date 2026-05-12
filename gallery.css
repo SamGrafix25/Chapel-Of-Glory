@@ -213,6 +213,22 @@ body {
     grid-template-rows: 1fr 1fr;
     gap: 5px;
 }
+@media (max-width: 768px) {
+  .album-card {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 992px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
 
 /* CONTENT */
 .album-content{
