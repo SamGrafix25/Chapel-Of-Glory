@@ -3,70 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Chapel Of Glory</title>
     <link rel="icon" type="image/png" href="Image/IMG_3424.png" />
-
-    <!-- ✅ Correct Google Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <!-- favicon placeholder: swap src for your real favicon -->
+    <link rel="icon" href="Image/IMG_3424.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
-
   <body>
-
-    <nav class="navbar">
-      <div class="logo-container">
-        <div class="logo">
-          <img src="Image/IMG_3424.png" alt="Chapel Of Glory" />
+    <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-brand">
+        <img
+          src="Image/IMG_3424.png"
+          alt="Chapel Of Glory Logo"
+          class="nav-logo"
+        />
+        <div class="nav-title">
+          Chapel Of Glory
+          <span>Thomas Adewumi University</span>
         </div>
-        <div class="church-name">CHAPEL OF GLORY</div>
       </div>
-
-      <!-- ✅ Navigation Links (with close button inside) -->
-      <ul class="nav-links" id="navLinks">
-
-        <li><a href="index.html" class="active">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallary.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-
-      <!-- ✅ Menu Button -->
-      <button class="menu-btn" id="menuBtn">
-        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      <button
+        class="hamburger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
     </nav>
 
-  </body>
-</html>
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallary.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-      <video autoplay muted loop playsinline>
-        <source
-          src="Video/WhatsApp Video 2026-04-13 at 7.07.06 PM.mp4"
-          type="video/mp4"
-        />
+    <!-- ============================================================
+       HERO
+       ============================================================ -->
+    <section class="hero" id="home">
+      <video
+        class="hero-video"
+        src="Video/WhatsApp Video 2026-04-13 at 7.07.06 PM.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      >
         Your browser does not support this video
       </video>
-
-      <div class="fallback"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-ring hero-ring-1" aria-hidden="true"></div>
+      <div class="hero-ring hero-ring-2" aria-hidden="true"></div>
+      <div class="hero-ring hero-ring-3" aria-hidden="true"></div>
 
       <div class="hero-content">
-        <h1 class="hero-title"><b>Welcome To Chapel Of Glory</b></h1>
-        <p class="hero-subtitle">
-         Christ In Us... Is The Hope Of Glory (Colossians 1:27).
+        <div class="hero-tag">TAU Chapel &mdash; Est. 2021</div>
+        <h1 class="hero-title">Welcome To<br /><em>Chapel Of Glory</em></h1>
+        <p class="hero-verse">
+          Christ In Us&hellip; Is The Hope Of Glory &mdash; Colossians 1:27
         </p>
+        <div class="hero-actions">
+          <a
+            href="https://www.youtube.com/@chapelofglorytau3418"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+          >
+            <span>&#9654;</span> Join Us Live
+          </a>
+          <a href="about.html" class="btn btn-outline">Discover Our Story</a>
+        </div>
       </div>
+
+      <div class="hero-scroll" aria-hidden="true">Scroll</div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="overview">
-      <div class="overview-container">
-        <!-- Left: Text Content -->
-        <div class="overview-text">
-          <h2 class="section-title">Overview</h2>
+    <!-- ============================================================
+       STATS BAR
+       ============================================================ -->
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <div class="stat-number" data-target="2021" data-suffix="">2021</div>
+        <div class="stat-label">Year Founded</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="7" data-suffix="+">7+</div>
+        <div class="stat-label">Ministry Units</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="3" data-suffix="">3</div>
+        <div class="stat-label">Senior Leaders</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2" data-suffix="">2</div>
+        <div class="stat-label">University Campus</div>
+      </div>
+    </div>
 
+    <!-- ============================================================
+       OVERVIEW / MISSION
+       ============================================================ -->
+    <section class="section" id="overview">
+      <div class="overview-grid">
+        <div class="overview-text reveal reveal-left">
+          <div class="section-eyebrow">Our Mission</div>
+          <h2>A Spiritual Home Rooted in Scripture</h2>
           <p>
             At Chapel of Glory, our commitment to spiritual growth is firmly
             rooted in the teachings and values of the Holy Bible. We uphold the
@@ -74,7 +133,6 @@
             foundation of all spiritual learning and development within the
             institution.
           </p>
-
           <p>
             The chapel is dedicated to directing hearts toward Omini Potent,
             fostering an atmosphere where He is worshipped sincerely and
@@ -83,241 +141,179 @@
             worship, spiritual growth, and meaningful engagement on life-related
             matters.
           </p>
-
           <p>
-            At Chapel of Glory, In Thomas Adewum University, our mission is
-            centered on placing God above all by nurturing a deep and personal
-            relationship with Him, rooted in scriptural truth (Luke 10:27; John
-            1:12). We are committed to delivering sound, thought-provoking
-            biblical teachings designed not just to inform, but to transform
-            lives through the active work of the Holy Spirit (2 Timothy
-            3:16–17).
+            At Chapel of Glory, in Thomas Adewumi University, our mission is
+            centred on placing God above all by nurturing a deep and personal
+            relationship with Him, rooted in scriptural truth
+            <em>(Luke 10:27; John 1:12)</em>. We are committed to delivering
+            sound, thought-provoking biblical teachings designed not just to
+            inform, but to transform lives through the active work of the Holy
+            Spirit <em>(2 Timothy 3:16–17)</em>.
           </p>
+          <a
+            href="about.html"
+            class="btn btn-navy"
+            style="margin-top: 12px; display: inline-flex"
+          >
+            Learn More About Us
+          </a>
         </div>
-
-        <!-- Right: Chapel Building Image -->
-        <div class="overview-image">
+        <div
+          class="overview-img-wrap reveal reveal-right"
+          style="transition-delay: 0.15s"
+        >
           <img
             src="Image/WhatsApp Image 2026-04-17 at 4.58.15 PM.jpeg"
             alt="Chapel Of Glory Building"
+            loading="lazy"
           />
         </div>
       </div>
     </section>
 
-    <!-- Devotional Store Section 
-    <section class="devotional-store">
-      <div class="store-container">
-        <h2 class="section-title">Devotional Store</h2>
+    <!-- ============================================================
+       QUICK LINKS CARDS
+       ============================================================ -->
+    <section class="section section-alt">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Explore</p>
+        <h2 class="section-title">Everything You Need</h2>
+        <div class="section-divider"></div>
         <p class="section-subtitle">
-          Enhance your spiritual journey with these inspiring devotionals and
-          books
+          Dive into worship, events, our community, and how to reach us.
         </p>
+      </div>
+      <div class="grid-4">
+        <a
+          href="about.html"
+          class="card reveal reveal-delay-1"
+          style="text-decoration: none"
+        >
+          <div class="card-body" style="padding: 32px 26px; text-align: center">
+            <div style="font-size: 2.2rem; margin-bottom: 14px">✝️</div>
+            <div class="card-title">About COG</div>
+            <p class="card-text">
+              Our vision, mission, leadership, and community story.
+            </p>
+          </div>
+        </a>
+        <a
+          href="services.html"
+          class="card reveal reveal-delay-2"
+          style="text-decoration: none"
+        >
+          <div class="card-body" style="padding: 32px 26px; text-align: center">
+            <div style="font-size: 2.2rem; margin-bottom: 14px">🙏</div>
+            <div class="card-title">Services</div>
+            <p class="card-text">
+              Weekly programmes, schedules, and chapel activities.
+            </p>
+          </div>
+        </a>
+        <a
+          href="events.html"
+          class="card reveal reveal-delay-3"
+          style="text-decoration: none"
+        >
+          <div class="card-body" style="padding: 32px 26px; text-align: center">
+            <div style="font-size: 2.2rem; margin-bottom: 14px">📅</div>
+            <div class="card-title">Events</div>
+            <p class="card-text">
+              Upcoming revivals, outreaches, and special gatherings.
+            </p>
+          </div>
+        </a>
+        <a
+          href="contact.html"
+          class="card reveal reveal-delay-4"
+          style="text-decoration: none"
+        >
+          <div class="card-body" style="padding: 32px 26px; text-align: center">
+            <div style="font-size: 2.2rem; margin-bottom: 14px">✉️</div>
+            <div class="card-title">Contact</div>
+            <p class="card-text">
+              Send a prayer request, testimony, or general enquiry.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-        <div class="store-grid">
-          Item 1: Open Heaven 
-          <div class="store-card">
-            <div class="card-image">
-              <img src="images/hymnbook.jpg" alt="Hymn Book" />
-            </div>
-            <div class="card-content">
-              <h3>Sunday School Book</h3>
-              <p>
-                A book of 
-              </p>
-              <a
-                href="pdfs/hymnbook-sample.pdf"
-                target="_blank"
-                class="download-btn"
-              >
-                View HYMM
-              </a>
-            </div>
-          </div>-->
-
-          <!-- Item 2: Hymn Book -->
-          <!-- Hymn Book - Updated with PDF Viewer 
-          <div class="store-card">
-            <div class="card-image">
-              <img src="images/hymnbook.jpg" alt="Hymn Book" />
-            </div>
-            <div class="card-content">
-              <h3>Hymn Book</h3>
-              <p>
-                Collection of worship hymns for personal and corporate worship
-              </p>
-              <a
-                href="pdfs/hymnbook-sample.pdf"
-                target="_blank"
-                class="download-btn"
-              >
-                View HYMM
-              </a>
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img
+              src="Image/IMG_3424.png"
+              alt="Chapel Of Glory Logo"
+              class="footer-logo"
+            />
+            <div class="footer-brand-name">
+              Chapel Of Glory
+              <small>Thomas Adewumi University</small>
             </div>
           </div>
-
-          Item 3: Sunday School 
-          <div class="store-card">
-            <div class="card-image">
-              <img src="images/sunday-school.jpg" alt="Sunday School Manual" />
-            </div>
-            <div class="card-content">
-              <h3>Sunday School</h3>
-              <div class="price">₦1,000</div>
-              <p>Comprehensive Sunday school teaching materials</p>
-              <button class="download-btn">DOWNLOAD SAMPLE</button>
-            </div>
-          </div>
-        </div> 
-
-        <div class="store-footer">
-          For full purchases, please contact us at
-          <p>
-            Email us:
-            <a href="mailto:chapleofgloryattau1@gmail.com"
-              >chapleofgloryattau1@gmail.com</a
-            >
+          <p class="footer-tagline">
+            &ldquo;Christ In Us&hellip; Is The Hope Of Glory&rdquo; — Col.
+            1:27<br />
+            A spiritual home for TAU since May 21, 2021.
           </p>
-          or visit the chapel.
+          <div class="footer-socials">
+            <a
+              href="https://www.instagram.com/chapelofgloryattau1?igsh=MWRhb3Nqc2I4Y2tsZw%3D%3D&utm_source=qr"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="https://www.youtube.com/@chapelofglorytau3418"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Thomas Adewumi University, Oko Irese, Kwara State COG</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📞</span>
+            <span><a href="tel:+2348103978063">+234 810 397 8063</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">✉️</span>
+            <span
+              ><a href="mailto:chapelofgloryattau1@gmail.com"
+                >chapelofgloryattau1@gmail.com</a
+              ></span
+            >
+          </div>
         </div>
       </div>
-    </section> -->
 
+      <div class="footer-bottom">
+        <span>&copy; 2026 Chapel Of Glory (TAU). All Rights Reserved.</span>
+        <span class="footer-credit"
+          >Designed &amp; produced by
+          <strong>Olorunshola Olamide Isaiah</strong></span
+        >
+      </div>
+    </footer>
 
-<!-- Prayer Request Section - Similar to Email Updates -->
-
-
-
-    <!-- Footer -->
-<footer class="footer">
-        <div class="footer-container">
-          <!-- About COG Chapel -->
-          <div class="footer-column">
-            <h3>About COG Chapel</h3>
-            <p>
-              A spiritual home for Thomas Adewumi University since 2021 may 21,
-              dedicated to worship, discipleship, and service.
-            </p>
-            
-            <!-- Social Media Icons -->
-            <div class="social-icons">
-              <a href="#" class="social-icon">f</a>
-              <a href="#" class="social-icon">📷</a>
-              <a href="#" class="social-icon">𝕏</a>
-              <a href="#" class="social-icon">▶️</a>
-            </div>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="services.html">SERVICES</a></li>
-              <li><a href="gallery.html">GALLERY</a></li>
-              <li><a href="contact.html" class="active">CONTACT</a></li>
-            </ul>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-column">
-            <h3>Contact Info</h3>
-            <div class="contact-item">
-              <span>📍</span>
-              <span>Thomas Adewunmi University oko Irese Kwara state COG</span>
-            </div>
-            <div class="contact-item">
-              <span>📞</span>
-              <span>+234 810 397 8063</span>
-            </div>
-            <div class="contact-item">
-              <span>✉️</span>
-              <span>chapelofgloryattau1@gmail.com</span>
-            </div>
-
-            
-          </div>
-        </div>
-
-        <!-- Bottom Copyright -->
-        <div class="footer-bottom">
-          <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
-          <p>
-            <small>>Designed & produced by Olorunshola Olamide Isaiah</small>
-          </p>
-        </div>
-      </footer>
-
- <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  const menuIcon = document.getElementById('menuIcon');
-  const closeIcon = document.getElementById('closeIcon');
-
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-
-    // Change icon between menu and close (X)
-    if (navLinks.classList.contains('active')) {
-      menuIcon.textContent = 'close';     // Shows X icon
-    } else {
-      menuIcon.textContent = 'menu';      // Shows hamburger
-    }
-  });
-
-
-  const prayerForm = document.getElementById('prayerForm');
-
-  prayerForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const prayerTitle = document.getElementById('prayerTitle').value.trim();
-    const prayerPoint = document.getElementById('prayerPoint').value.trim();
-
-    if (!fullName || !email || !prayerPoint) {
-      alert("Please fill in your name, email, and prayer request.");
-      return;
-    }
-// The email body content sent to the Prophet will be formatted as follows:
-    let body = `New Prayer Request from Chapel of Glory Member\n\n`;
-    body += `Name: ${fullName}\n`;
-    body += `Email: ${email}\n`;
-    if (phone) body += `Phone: ${phone}\n`;
-    if (prayerTitle) body += `Prayer Title: ${prayerTitle}\n\n`;
-    body += `Prayer Request:\n${prayerPoint}\n\n`;
-    body += `Submitted on: ${new Date().toLocaleString()}`;
-
-    const prophetEmail = "olamideolorunshola07@gmail.com";
-
-    const mailtoLink = `mailto:${prophetEmail}?subject=Prayer Request from ${encodeURIComponent(fullName)}&body=${encodeURIComponent(body)}`;
-
-    // Try to open email client
-    window.location.href = mailtoLink;
-
-    // Show success message
-    const successDiv = document.createElement('div');
-    successDiv.className = 'success-message';
-    successDiv.innerHTML = `
-      <strong>Thank You!</strong><br>
-      Your prayer request has been prepared.<br>
-      Please check your email app and click <strong>"Send"</strong> to deliver it to the Prophet.
-    `;
-
-    prayerForm.appendChild(successDiv);
-    successDiv.style.display = 'block';
-
-    // Reset form
-    setTimeout(() => {
-      prayerForm.reset();
-      successDiv.remove();
-    }, 4000);
-  });
-</script>
-
-
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,244 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="service.css" />
-    <title>Chapel Of Glory</title>
-    <link rel="icon" type="image/png" href="Image/IMG_3424.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Chapel Of Glory</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Image/IMG_3424.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
 
-    <!-- ✅ Correct Google Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="Image/IMG_3424.png" alt="Chapel Of Glory Logo" class="nav-logo" />
+      <div class="nav-title">Chapel Of Glory<span>Thomas Adewumi University</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <!-- <li><a href="events.html">Events</a></li> -->
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle mobile menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <!-- <a href="events.html">Events</a> -->
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <body>
-    <nav class="navbar">
-      <div class="logo-container">
-        <div class="logo">
-          <img src="Image/IMG_3424.png" alt="Chapel Of Glory" />
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-ring page-hero-ring-1" aria-hidden="true"></div>
+    <div class="page-hero-ring page-hero-ring-2" aria-hidden="true"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-tag">What We Offer</p>
+      <h1>Our Services</h1>
+      <p>Weekly programmes, spiritual activities, Living the life of Christ in the entire university community. And Outside The University</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span aria-current="page">Services</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SERVICES CARDS -->
+  <section class="section">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Ministry Offerings</p>
+      <h2 class="section-title">How We Serve</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Every programme is designed to build, uplift, and transform.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-icon">📖</span>
+        <h3>Belivers Class &amp; Teaching</h3>
+        <p> The Believers Class is a foundational discipleship programme designed to ground 
+    new and existing members in the core truths of the Christian faith. Through 
+    structured lessons rooted in scripture, participants are equipped with a solid 
+    biblical foundation, understanding of salvation, the Holy Spirit, prayer, 
+    and daily Christian living. It is a journey from new birth to maturity in Christ.</p>
+        <p class="service-meta">📅 Monday</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-icon">🕊️</span>
+        <h3>Sunday Worship Service</h3>
+        <p>Our flagship weekly gathering filled with praise, powerful biblical preaching, and community fellowship that anchors every believer.</p>
+        <p class="service-meta">📅 Every Sunday</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-icon">📖</span>
+        <h3>Bible Study &amp; Teaching</h3>
+        <p>Deep, thought-provoking scriptural sessions delivered weekly to grow knowledge, faith, and practical Christian living.</p>
+        <p class="service-meta">📅 Wednesdays</p>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <span class="service-icon">🙏</span>
+        <h3>Prayer Meetings</h3>
+        <p>Corporate prayer gatherings powered by the Holy Spirit, interceding for the university, nation, and one another.</p>
+        <p class="service-meta">📅 Sunday Evening </p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-icon">🎶</span>
+        <h3>Praise &amp; Worship</h3>
+        <p>Spirit-filled, anointed worship sessions led by our dedicated Choir &amp; Worship Unit to usher in God's presence.</p>
+        <p class="service-meta">📅 Special occasions</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-icon">🎭</span>
+        <h3>Drama Ministrations</h3>
+        <p>Powerful dramatic presentations by our Drama Unit that bring scripture to life and communicate the gospel creatively.</p>
+        <p class="service-meta">📅 Special occasions</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-icon">🤝</span>
+        <h3>Counselling &amp; Welfare</h3>
+        <p>Compassionate support and pastoral care for students, staff, and visitors navigating life's challenges on campus.</p>
+        <p class="service-meta">📅 By appointment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE TABLE -->
+  <section class="section section-alt">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Weekly Programme</p>
+      <h2 class="section-title">Service Schedule</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Programme</th>
+            <th>Time</th>
+            <th>Venue</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sunday</td>
+            <td>Worship Service</td>
+            <td>First Service 8:00 AM & Second Service 10:00 AM</td>
+            <td>East Campus (Auditorium) & West Campus(Chapel)</td>
+            <td><span class="badge badge-navy">Weekly</span></td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>Prayer Meeting</td>
+            <td>6:00 PM – 7:00 PM</td>
+            <td>East Campus (Auditorium) & West Campus(Chapel)</td>
+            <td><span class="badge badge-navy">Weekly</span></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Bible Study</td>
+            <td>6:00 PM – 7:30 PM</td>
+            <td>East Campus (Auditorium) & West Campus(Chapel)</td>
+            <td><span class="badge badge-navy">Weekly</span></td>
+          </tr>
+          <tr>
+            <td>Special</td>
+            <td>Outreach &amp; Evangelism</td>
+            <td>As announced</td>
+            <td>Campus &amp; surrounds</td>
+            <td><span class="badge badge-red">Occasional</span></td>
+          </tr>
+          <tr>
+            <td>Special</td>
+            <td>Drama Ministration</td>
+            <td>As announced</td>
+            <td>COG Chapel, TAU</td>
+            <td><span class="badge badge-red">Occasional</span></td>
+          </tr>
+          <tr>
+            <td>Special</td>
+            <td>Praise &amp; Worship</td>
+            <td>As announced</td>
+            <td>COG Chapels, TAU</td>
+            <td><span class="badge badge-red">Occasional</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="Image/IMG_3424.png" alt="Chapel Of Glory Logo" class="footer-logo" />
+          <div class="footer-brand-name">
+            Chapel Of Glory
+            <small>Thomas Adewumi University</small>
+          </div>
         </div>
-        <div class="church-name">CHAPEL OF GLORY</div>
+        <p class="footer-tagline">
+          &ldquo;Christ In Us&hellip; Is The Hope Of Glory&rdquo; — Col. 1:27<br>
+          A spiritual home for TAU since May 21, 2021.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/chapelofgloryattau1?igsh=MWRhb3Nqc2I4Y2tsZw%3D%3D&utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://www.youtube.com/@chapelofglorytau3418"><i class="fa-brands fa-youtube"></i></a>
+          <i class="fa-brands fa-tiktok"></i>
+          
+        </div>
       </div>
 
-      <!-- ✅ Navigation Links (with close button inside) -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html" class="active">SERVICES</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-
-      <!-- ✅ Menu Button -->
-      <button class="menu-btn" id="menuBtn">
-        <span class="material-symbols-outlined" id="menuIcon">menu</span>
-      </button>
-    </nav>
-
-    <section class="services-section">
-      <div class="section-title">
-        <h1>Our Services</h1>
-        <p>Experience worship, growth, fellowship, and transformation.</p>
-      </div>
-
-      <div class="services-container">
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Sunday service.jpeg" alt="Bible Study" />
-          </div>
-          <h3>Sunday Worship</h3>
-          <p>
-            Join us for powerful worship, inspiring messages, and fellowship.
-          </p>
-          <!-- <div class="service-time">Sundays • 8:00 AM</div> -->
-          <div class="service-time">
-            Sundays (EAST) •First Service - 8:00 AM
-            <br />
-            Second Service - 10:00 AM
-            <br />
-            <span class="second-service">
-              Sundays (WEST) • 10:00 AM
-              <br />
-            </span>
-          </div>
-          <a
-            href="#"
-            class="service-btn"
-            data-title="Sunday Worship"
-            data-info="Our Sunday Worship Service is a time of praise, worship, prayer, and biblical teaching designed to strengthen your faith and relationship with God."
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <img src="bible study.jpeg" alt="Bible Study" />
-          </div>
-          <!-- <div class="service-icon">🙏</div> -->
-          <h3>Bible Study</h3>
-          <p>
-            Gather together for intercession, thanksgiving, and spiritual
-            revival.
-          </p>
-          <!-- <div class="service-time">Wednesdays • 6:00 PM</div> -->
-          <div class="service-time">
-            Sundays (EAST) • 6:00 PM
-            <br />
-            <span class="second-service"> Sundays (WEST) • 5:45 PM </span>
-          </div>
-          <a
-            href="#"
-            class="service-btn"
-            data-title="Bible Study"
-            data-info="Bible Study sessions help believers understand scripture deeply and apply biblical principles to everyday life."
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Prayer meeting.jpeg" alt="Bible Study" />
-          </div>
-          <h3>Prayer Meeting</h3>
-          <p>
-            Grow deeper in the Word through engaging and practical teachings.
-          </p>
-          <!-- <div class="service-time">Sundays(EAST) • 6:00 PM</div> -->
-          <div class="service-time">
-            Sunday Evening (EAST) • 6:00 PM
-            <br />
-            <span class="second-service"> Sunday Evening(WEST) • 5:45 PM </span>
-          </div>
-          <a
-            href="#"
-            class="service-btn"
-            data-title="Prayer Meeting"
-            data-info="Our prayer meetings focus on seeking God together through heartfelt prayer, worship, and encouragement"
-            .
-          >
-            Learn More
-          </a>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="events.html">Events</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
-    </section>
 
-    <!-- Modal -->
-
-    <div class="modal" id="serviceModal">
-      <div class="modal-content">
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-
-        <button class="close-btn" id="closeModal">Close</button>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>Thomas Adewumi University, Oko Irese, Kwara State COG</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span><a href="tel:+2348103978063">+234 810 397 8063</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:chapelofgloryattau1@gmail.com">chapelofgloryattau1@gmail.com</a></span>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- About COG Chapel -->
-        <div class="footer-column">
-          <h3>About COG Chapel</h3>
-          <p>
-            A spiritual home for Thomas Adewumi University since 2021 may 21,
-            dedicated to worship, discipleship, and service.
-          </p>
-        </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Chapel Of Glory (TAU). All Rights Reserved.</span>
+      <span class="footer-credit">Designed &amp; produced by <strong>Olorunshola Olamide Isaiah</strong></span>
+    </div>
+  </footer>
 
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-column">
-          <h3>Contact Info</h3>
-          <div class="contact-item">
-            <span>📍</span>
-            <span>Thomas Adewumi Universit oko Irese Kwara state COG</span>
-          </div>
-          <div class="contact-item">
-            <span>📞</span>
-            <span>+234 810 397 8063</span>
-          </div>
-          <div class="contact-item">
-            <span>✉️</span>
-            <span>chapelofgloryattau1@gmail.com</span>
-          </div>
-
-          <!-- Social Media Icons -->
-          <div class="social-icons">
-            <a href="#" class="social-icon">f</a>
-            <a href="#" class="social-icon">📷</a>
-            <a href="#" class="social-icon">𝕏</a>
-            <a href="#" class="social-icon">▶️</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Copyright -->
-      <div class="footer-bottom">
-        <p>© 2026 Chapel Of Glory (TAU). All Rights Reserved.</p>
-        <p><small>>Designed & produced by Akinlotan Victor</small></p>
-      </div>
-    </footer>
-
-    <script>
-      const buttons = document.querySelectorAll(".service-btn");
-      const modal = document.getElementById("serviceModal");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalText = document.getElementById("modalText");
-      const closeModal = document.getElementById("closeModal");
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          modalTitle.innerText = this.dataset.title;
-          modalText.innerText = this.dataset.info;
-
-          modal.style.display = "flex";
-        });
-      });
-
-      closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-
-      const menuBtn = document.getElementById("menuBtn");
-      const navLinks = document.getElementById("navLinks");
-      const menuIcon = document.getElementById("menuIcon");
-      const closeIcon = document.getElementById("closeIcon");
-
-      menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-
-        // Change icon between menu and close (X)
-        if (navLinks.classList.contains("active")) {
-          menuIcon.textContent = "close"; // Shows X icon
-        } else {
-          menuIcon.textContent = "menu"; // Shows hamburger
-        }
-      });
-    </script>
-  </body>
+  <script src="main.js"></script>
+</body>
 </html>
