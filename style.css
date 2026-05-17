@@ -1480,83 +1480,325 @@ textarea.form-control {
 .breadcrumb span {
   color: rgba(255, 255, 255, 0.3);
 }
-
 /* ============================================================
-   Gallary
+   GALLERY SECTION — Redesign
+   In style.css, find the gallery block (around line 1500)
+   and replace from .gallery-section { ... } down to the
+   last gallery @media closing brace with this entire block.
    ============================================================ */
 
 .gallery-section {
-  padding: 80px 8%;
-  background: #f8f9fc;
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 5% 100px;
+  background: #f5f7fc;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.section-title {
+.gallery-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.gallery-bg-orb--1 {
+  width: 540px;
+  height: 540px;
+  top: -130px;
+  right: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 38, 129, 0.1) 0%,
+    transparent 70%
+  );
+  animation: orbFloat 9s ease-in-out infinite;
+}
+.gallery-bg-orb--2 {
+  width: 400px;
+  height: 400px;
+  bottom: 40px;
+  left: -110px;
+  background: radial-gradient(
+    circle,
+    rgba(221, 26, 26, 0.07) 0%,
+    transparent 70%
+  );
+  animation: orbFloat 13s ease-in-out infinite reverse;
+}
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-24px) scale(1.03);
+  }
+}
+
+.gallery-grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 38, 129, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 38, 129, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.gallery-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.gallery-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+}
+.gallery-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+.gallery-eyebrow__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: blink 1.6s ease infinite;
+}
+.gallery-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.gallery-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: rgba(0, 38, 129, 0.5);
+  line-height: 1.75;
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+.gallery-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--navy);
+  opacity: 0.15;
+}
+.gallery-divider span:not(.gallery-divider__cross) {
+  height: 1px;
+  width: 72px;
+  background: currentColor;
+}
+.gallery-divider__cross {
+  font-size: 0.8rem;
 }
 
-.section-title h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.section-title p {
-  color: #666;
-}
-
+/* Grid */
 .album-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
 }
 
-/* CARD */
+/* Card */
 .album-card {
-  background: white;
+  background: #fff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: 0.4s ease;
+  box-shadow:
+    0 2px 8px rgba(0, 38, 129, 0.06),
+    0 8px 32px rgba(0, 38, 129, 0.09);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 0.84, 0.44, 1),
+    box-shadow 0.4s ease;
+  animation: cardReveal 0.6s ease both;
+  animation-delay: calc(var(--i, 0) * 0.12s);
 }
-
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .album-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow:
+    0 4px 16px rgba(0, 38, 129, 0.08),
+    0 24px 56px rgba(0, 38, 129, 0.16);
 }
 
-/* PREVIEW GRID */
+/* Photo grid */
 .album-preview {
+  position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 5px;
-  height: 280px;
+  gap: 3px;
+  height: 270px;
+  overflow: hidden;
 }
-
-.album-preview img {
+.album-preview .big-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.22, 0.84, 0.44, 1);
 }
-.album-content a {
-  background-color: var(--Logo-color);
-  color: var(--Logo-color-3);
-  cursor: pointer;
-  text-align: center;
-  padding: 10px 20px;
-  display: flex;
-}
-
-.album-content a:hover {
-  background-color: var(--logo-color-2);
+.album-card:hover .big-img {
+  transform: scale(1.05);
 }
 
 .small-images {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 5px;
+  gap: 3px;
 }
-@media (max-width: 768px) {
-  .album-card {
+.small-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.22, 0.84, 0.44, 1);
+}
+.album-card:hover .small-images img {
+  transform: scale(1.07);
+}
+
+/* Hover overlay */
+.album-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 38, 129, 0.75) 0%,
+    rgba(0, 38, 129, 0.2) 55%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.album-card:hover .album-overlay {
+  opacity: 1;
+}
+
+/* Album number badge */
+.album-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Card content */
+.album-content {
+  padding: 20px 22px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.album-content h2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.album-content p {
+  font-size: 0.82rem;
+  color: rgba(0, 38, 129, 0.5);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* View Full Album button */
+.album-content a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 14px 20px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: -22px;
+  margin-right: -22px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 38, 129, 0.08);
+  transition:
+    background 0.25s ease,
+    letter-spacing 0.25s ease;
+}
+.album-content a svg {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.album-content a:hover {
+  background: var(--red);
+  letter-spacing: 0.14em;
+}
+.album-content a:hover svg {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gallery-section {
+    padding-bottom: 72px;
+  }
+  .album-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .gallery-section {
+    padding-top: calc(var(--nav-h) + 56px);
+  }
+  .album-container {
     grid-template-columns: 1fr;
+  }
+  .album-preview {
+    height: 240px;
+  }
+  .gallery-title {
+    letter-spacing: -0.01em;
   }
 }
 
