@@ -85,34 +85,3 @@ if (hamburger && mobileNav) {
   );
   stats.forEach((s) => io.observe(s));
 })();
-
-/* ================================================================
-   GALLERY SECTION JS
-   Paste into your main.js (or add as a <script> before </body>)
-   ================================================================ */
-
-(function () {
-  "use strict";
-
-  /* ── Scroll fade-up observer ─────────────────────────────────── */
-  const fadeEls = document.querySelectorAll(".fade-up");
-
-  if (!fadeEls.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target); // fire once
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
-    },
-  );
-
-  fadeEls.forEach((el) => observer.observe(el));
-})();
