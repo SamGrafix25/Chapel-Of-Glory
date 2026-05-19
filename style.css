@@ -116,10 +116,7 @@ body {
 .nav-logo {
   width: 75px;
   height: 75px;
-  top: 50%;
-  left: 70%;
-  overflow: hidden;
-  animation: flip 2s ease-in-out infinite;
+  animation: flip 3s linear infinite;
   transform-style: preserve-3d;
 }
 
@@ -127,8 +124,8 @@ body {
   0% {
     transform: perspective(800px) rotateY(0deg);
   }
-  50% {
-    transform: perspective(800px) rotateY(180deg);
+  100% {
+    transform: perspective(800px) rotateY(360deg);
   }
 }
 .nav-title {
